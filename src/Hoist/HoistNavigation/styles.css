@@ -1,0 +1,26 @@
+.list-group {
+    font-size: 25px;
+    display: fixed;
+    align-items: left;
+    background-color: black;
+    text-decoration: none;
+    padding-left: 0px;
+    
+}
+
+.list-group-item {
+
+    background-color: black;
+    color : green; 
+    text-decoration: none;
+    padding-left: 50px;
+    padding-right: 50px; 
+
+
+}
+
+.list-group a.active {
+    color : blue;
+    text-decoration: none;
+
+}

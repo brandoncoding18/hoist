@@ -1,0 +1,200 @@
+<button onClick={() => {
+                            setCurrentSet(set.setno)
+                                if(currentSet !== set.setno) {
+                                    setMax(ex, ( Math.floor((Math.floor((getMax(ex) * RPE[rpe][reps])/5) * 5 / RPE[10][reps])/5) * 5)) 
+                                    setLastButton(10)
+                                    set.weight = weight; 
+                                    setCurrentWeight(getMax(e))
+                                }
+                                else if(lastButton !== 10) {
+                                    setMax(e, ( Math.floor((Math.floor((currentWeight* RPE[rpe][reps])/5) * 5 / RPE[10][reps])/5) * 5)) 
+                                    setLastButton(10)
+
+                                }
+                                }}>Current Set: {currentSet} Current Weight: {currentWeight} || Weight: {weight} || 10</button>
+                                
+
+
+                            <button onClick={() => {
+                                setCurrentSet(set.setno)
+
+                                if(currentSet !== set.setno) {
+                                    setMax(e, ( Math.floor((Math.floor((getMax(e) * RPE[rpe][reps])/5) * 5 / RPE[6][reps])/5) * 5)) 
+                                    setLastButton(6)
+                                    set.weight = weight; 
+                                    setCurrentWeight(getMax(e))
+
+
+                                }
+                                else if(lastButton !== 6) {
+                                    setMax(e, ( Math.floor((Math.floor((currentWeight * RPE[rpe][reps])/5) * 5 / RPE[6][reps])/5) * 5)) 
+                                    setLastButton(6)
+
+                                }
+
+
+
+                                
+                                }}>Current Set: {currentSet} Current Weight: {currentWeight} || Weight: {weight} || 6</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                {
+                    
+                    /*
+                    exercise.sets.map((set, index) => {
+                        var setProps = JSON.parse(JSON.stringify(set))
+                        const ex = exercise.name
+                        const rpe = set.rpe;
+                        const reps = set.reps;
+                        let weight = 0; 
+
+                        setProps = Object.entries(setProps)
+                        var setList = []
+                        return (
+                            <h5>&emsp;&emsp;&emsp;&emsp;{set.setno}
+                            {
+                                setProps.map((p) => {
+                                    if(p[0] === "weight") {
+                                        if(set.setno <= currentSet) {
+                                            weight = set.weight
+
+    
+    
+                                        }
+                                        else {
+                                            
+                                            weight = Math.floor((getMax(ex) * RPE[rpe][reps])/5) * 5; 
+
+                                        }
+                                        return(<div>
+
+                                            
+                                            
+                                            Weight: {weight}</div>)
+
+                                        
+
+                                    }
+                                    if(p[0] === "rpe") {
+                                        return(<div>RPE: {rpe}RPE</div>)
+                                    }
+                                    if(p[0] === "intensity") {
+                                        return(<div>Intensity: {Math.round((RPE[rpe][reps] * 1000))/10}%</div>)
+                                    }
+                                    if(p[0] === "reps") {
+                                        return(<div>Reps: {reps}</div>)
+
+                                    }
+                                    setList.push(6)
+                                }
+                                )
+                                
+                            }
+                            
+
+                                <form onSubmit={handleSubmit}>
+                                <label>Estimated RPE:
+                                <input type="number" id="ERPE" name="ERPE" min="6" max="10" onChange={(e) => {
+                                    
+                                    setList[index] = e.target.value;
+                                    setERPE(setList);
+                                    setCurrIndex(index);
+                                    setCurrExercise(ex) }} />
+
+                                </label>
+                                <input type="submit" onClick={(e) =>{ 
+                                    
+                                    setCurrIndex(index);
+                                    setCurrentSet(set.setno)
+                                    if(currentSet !== set.setno) {
+                                      
+                                        setMax(ex, ( Math.floor((weight / RPE[ERPE[index]][reps])/5) * 5)) 
+                                        setLastButton(ERPE[index])
+                                        set.weight = weight; 
+                                        setCurrentWeight(getMax(e))
+                                    }
+                                    else if(lastButton !== ERPE[index]) {
+                                        setMax(ex, ( Math.floor((Math.floor((currentWeight* RPE[rpe][reps])/5) * 5 / RPE[ERPE[index]][reps])/5) * 5)) 
+                                        setLastButton(ERPE[index])
+
+                                    }
+                                
+                                
+                                }}/>
+                                </form>
+                                
+                        
+                            
+
+
+                            </h5>
+                            
+                        )
+
+
+                        }
+
+                    )
+                    */
+                }
+
+
+
+
+
+
+
+
+
+                <button onClick={() =>  weekNumber < calendar.weeks.length  ? setWeekNumber(weekNumber + 1) : setWeekNumber(weekNumber)}>
+            IncrementWeek
+        </button>
+        <button onClick={() => weekNumber > 1  ? setWeekNumber(weekNumber - 1) : setWeekNumber(weekNumber)}>
+            DecrementWeek
+        </button>
+
+        <button onClick={() =>  dayNumber < week.days.length  ? setDayNumber(dayNumber + 1) : setDayNumber(dayNumber)}>
+            IncrementDay
+        </button>
+        <button onClick={() => dayNumber > 1  ? setDayNumber(dayNumber - 1) : setDayNumber(dayNumber)}>
+            DecrementDay
+        </button>
+
+        <button onClick={() =>  exerciseNumber < day.exercises.length  ? setExerciseNumber(exerciseNumber + 1) : setExerciseNumber(dayNumber)}>
+            IncrementExercise
+        </button>
+        <button onClick={() => dayNumber > 1  ? setDayNumber(dayNumber - 1) : setDayNumber(dayNumber)}>
+            DecrementExercise
+        </button>
+
+
+
+
+
+
+        <h2>Max Squat: {maxSquat} </h2>
+        <h2>Max Bench: {maxBench}</h2>
+        <h2>Max Deadlift: {maxDeadlift}</h2>
+        <h2>Max Shoulder Press: {maxOverhead}</h2>
+        <h2>Max Barbell Row: {maxRow}</h2>

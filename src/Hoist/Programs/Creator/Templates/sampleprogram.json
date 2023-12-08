@@ -1,0 +1,597 @@
+ 
+    {"weeks" :
+    [ 
+        { "weekno" : 1, "days" : 
+             [
+                { "dayno" : 1, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 5, "reps" : 0, "rpe" : 6,"intensity" : 0, "weight" : 0
+                                }
+
+                            ]
+                        },
+
+                        { "exno" : 2, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "slbs", "sets" : 
+                        [
+                            {
+                                "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                            }
+
+                        ]
+                    }
+
+
+                    ]
+                },
+                { "dayno" : 2, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                }
+
+                            ]
+                        }
+
+                    ]
+                },
+
+                { "dayno" : 3, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                                }
+
+                            ]
+                        },
+
+                        { "exno" : 2, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "slbs", "sets" : 
+                        [
+                            {
+                                "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                            }
+
+                        ]
+                    }
+
+
+                    ]
+                },
+
+                { "dayno" : 4, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                }
+
+                            ]
+                        }
+
+                    ]
+                }
+            ]
+
+        },
+
+        { "weekno" : 2, "days" : 
+             [
+                { "dayno" : 1, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                                }
+
+                            ]
+                        },
+
+                        { "exno" : 2, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "slbs", "sets" : 
+                        [
+                            {
+                                "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                            }
+
+                        ]
+                    }
+
+
+                    ]
+                },
+                { "dayno" : 2, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                }
+
+                            ]
+                        }
+
+                    ]
+                },
+
+                { "dayno" : 3, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                                }
+
+                            ]
+                        },
+
+                        { "exno" : 2, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "slbs", "sets" : 
+                        [
+                            {
+                                "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                            }
+
+                        ]
+                    }
+
+
+                    ]
+                },
+
+                { "dayno" : 4, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                }
+
+                            ]
+                        }
+
+                    ]
+                }
+            ]
+
+        },
+
+        { "weekno" : 3, "days" : 
+             [
+                { "dayno" : 1, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6,"intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                                }
+
+                            ]
+                        },
+
+                        { "exno" : 2, "name" : "Squat", "notes" : "", "units" : "slbs", "sets" : 
+                        [
+                            {
+                                "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                            }
+
+                        ]
+                    }
+
+
+                    ]
+                },
+                { "dayno" : 2, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "Squat", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                }
+
+                            ]
+                        }
+
+                    ]
+                },
+
+                { "dayno" : 3, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                                }
+
+                            ]
+                        },
+
+                        { "exno" : 2, "name" : "Squat", "notes" : "", "units" : "slbs", "sets" : 
+                        [
+                            {
+                                "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                            }
+
+                        ]
+                    }
+
+
+                    ]
+                },
+
+                { "dayno" : 4, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "Squat", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                }
+
+                            ]
+                        }
+
+                    ]
+                }
+            ]
+
+        },
+
+        { "weekno" : 4, "days" : 
+             [
+                { "dayno" : 1, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                                }
+
+                            ]
+                        },
+
+                        { "exno" : 2, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "slbs", "sets" : 
+                        [
+                            {
+                                "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                            }
+
+                        ]
+                    }
+
+
+                    ]
+                },
+                { "dayno" : 2, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                }
+
+                            ]
+                        }
+
+                    ]
+                },
+
+                { "dayno" : 3, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                                }
+
+                            ]
+                        },
+
+                        { "exno" : 2, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "slbs", "sets" : 
+                        [
+                            {
+                                "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                            }
+
+                        ]
+                    }
+
+
+                    ]
+                },
+
+                { "dayno" : 4, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                }
+
+                            ]
+                        }
+
+                    ]
+                }
+            ]
+
+        }
+
+        
+    
+    ]
+    }
+
+
+ 
+
+
+

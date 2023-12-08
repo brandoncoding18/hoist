@@ -1,0 +1,95 @@
+[  
+    { "_id": "1", "user" : "kae", "name" : "16 Week Template", "current" : {"week" : 1, "day" : 1, "exercise": 1, "set":1},
+    "weeks" :
+    [ 
+        { "weekno" : 1, "days" : 
+             [
+                { "dayno" : 1, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "Bench", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 4, "rpe" : 8, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 4, "rpe" : 8, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 4, "rpe" : 8, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 4, "rpe" : 8, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 5, "reps" : 1, "rpe" : 10, "intensity" : 0, "weight" : 0
+                                }
+
+                            ]
+                        },
+
+                        { "exno" : 2, "name" : "Squat", "notes" : "", "units" : "slbs", "sets" : 
+                        [
+                            {
+                                "setno" : 1, "reps" : 4, "rpe" : 8, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 2, "reps" : 4, "rpe" : 8, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 3, "reps" : 4, "rpe" : 8, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 4, "reps" : 4, "rpe" : 8, "intensity" : 0,  "weight" : 0
+                            },
+                            {
+                                "setno" : 5, "reps" : 1, "rpe" : 10, "intensity" : 0, "weight" : 0
+                            }
+
+                        ]
+                    }
+
+
+                    ]
+                },
+                { "dayno" : 2, "exercises" :
+                    [
+                        { "exno" : 1, "name" : "Squat", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 5, "rpe" : 8, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 5, "rpe" : 8, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 5, "rpe" : 8, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 5, "rpe" : 8, "intensity" : 0,  "weight" : 0
+                                }
+
+                            ]
+                        }
+
+                    ]
+                }
+
+                        
+
+
+                
+        
+            
+            ]
+
+        }
+        
+    
+    ]
+    }
+
+
+]       
+
+
+

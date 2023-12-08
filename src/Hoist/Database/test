@@ -1,0 +1,50 @@
+{"_id" : "1", "days" : 
+        [
+            {"_id" : "1", "exercises" : [
+
+                {"_id" : "1", "name" : "Bench Press", "sets" : [
+
+                    {"_id" : "1", "reps" : 8, "RPE" : 9, "weight" : 225, "unit" : "lbs"},
+                    {"_id" : "2", "reps" : 8, "RPE" : 9, "weight" : 225, "unit" : "lbs"},
+                    {"_id" : "3", "reps" : 8, "RPE" : 9, "weight" : 225, "unit" : "lbs"},
+                    {"_id" : "4", "reps" : 12, "RPE" : 6.5, "weight" : 175, "unit" : "lbs"},
+                    {"_id" : "5", "reps" : 12, "RPE" : 6.5, "weight" : 175, "unit" : "lbs"},
+                    {"_id" : "6", "reps" : 12, "RPE" : 6.5, "weight" : 175, "unit" : "lbs"},
+                    {"_id" : "7", "reps" : 12, "RPE" : 6.5, "weight" : 175, "unit" : "lbs"}
+
+                    
+
+                ]
+                },
+                {"_id" : "2", "name" : "Squat", "sets" : [
+
+                    {"_id" : "1", "reps" : 8, "RPE" : 9, "weight" : 315, "unit" : "lbs"},
+                    {"_id" : "2", "reps" : 8, "RPE" : 9, "weight" : 315, "unit" : "lbs"},
+                    {"_id" : "3", "reps" : 8, "RPE" : 9, "weight" : 315, "unit" : "lbs"},
+                    {"_id" : "4", "reps" : 12, "RPE" : 6.5, "weight" : 225, "unit" : "lbs"},
+                    {"_id" : "6", "reps" : 12, "RPE" : 6.5, "weight" : 225, "unit" : "lbs"},
+                    {"_id" : "7", "reps" : 12, "RPE" : 6.5, "weight" : 225, "unit" : "lbs"}
+                    
+
+                ]
+                },
+                {"_id" : "3", "name" : "Deadlift", "sets" : [
+
+                    {"_id" : "1", "reps" : 8, "RPE" : 9, "weight" : 405, "unit" : "lbs"},
+                    {"_id" : "2", "reps" : 8, "RPE" : 9, "weight" : 405, "unit" : "lbs"},
+                    {"_id" : "3", "reps" : 8, "RPE" : 9, "weight" : 405, "unit" : "lbs"},
+                    {"_id" : "4", "reps" : 15, "RPE" : 7, "weight" : 315, "unit" : "lbs"},
+                    {"_id" : "5", "reps" : 15, "RPE" : 7, "weight" : 315, "unit" : "lbs"},
+                    {"_id" : "6", "reps" : 15, "RPE" : 7, "weight" : 315, "unit" : "lbs"}
+                    
+
+                ]
+                }
+
+                
+
+            ]
+            }
+
+        ]
+        }

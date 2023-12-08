@@ -1,0 +1,64 @@
+.card {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    background-color: grey;
+
+    width : max-content;
+    display:fixed;
+    
+}
+
+
+.card-wrapper {
+    display:flex;
+    
+}
+
+
+
+
+
+
+.day-card {
+    display : inline-flex; 
+    text-align : center; 
+    border: 1px solid black;
+    margin : 10px; 
+    
+    background-color: white;
+    width : max-content;
+
+
+}
+
+.day-label {
+
+    display : inline-flex; 
+    text-align : center; 
+    border: 1px solid black;
+    
+    background-color: white;
+    width : max-content;
+
+
+}
+
+.exercise-card {
+    width: auto; 
+    background-color: white;
+
+    text-align: center;
+    display : fixed; 
+    border: 1px solid black;
+
+}
+
+.set-card {
+    background-color: white;
+    display: flex;
+    border: 1px solid black;
+
+}
+.week-title {
+    font-family:'Courier New', Courier, monospace
+}

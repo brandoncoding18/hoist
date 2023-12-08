@@ -1,0 +1,20 @@
+{ "exno" : 1, "name" : "[Insert Exercise Name]", "notes" : "", "units" : "lbs", "sets" : 
+                            [
+                                {
+                                    "setno" : 1, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 2, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 3, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 4, "reps" : 0, "rpe" : 6, "intensity" : 0,  "weight" : 0
+                                },
+                                {
+                                    "setno" : 5, "reps" : 0, "rpe" : 6, "intensity" : 0, "weight" : 0
+                                }
+
+                            ]
+                        }
