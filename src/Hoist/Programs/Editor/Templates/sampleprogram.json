@@ -1,6 +1,5 @@
  
-    { "_id": "1", "user" : "null", "name" : "[Insert Program Name]", "current" : {"week" : 1, "day" : 1, "exercise": 1, "set":1},
-    "weeks" :
+    {"weeks" :
     [ 
         { "weekno" : 1, "days" : 
              [

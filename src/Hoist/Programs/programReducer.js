@@ -3,7 +3,7 @@ import Database from "../Database";
 const initialState = {
     programs : Database.calendars,
     program : null,
-    current : null
+    current : 0
 
 };
 
@@ -13,12 +13,13 @@ const programSlice = createSlice({
   initialState,
   reducers: {
     setProgram : (state, action) => {
-      alert(JSON.stringify(action)); 
+
         state.program = action.payload
 
     },
 
     setPrograms : (state, action) => {
+      
       state.programs = action.payload
     },
 
@@ -27,6 +28,7 @@ const programSlice = createSlice({
 
   },
     addToPrograms : (state, action) => {
+      state.programs = state.programs.filter((p) => p._id !== action.payload._id)
       state.programs.push(action.payload)
     },
 
@@ -35,33 +37,33 @@ const programSlice = createSlice({
     },
 
     incrementDay : (state) => {
-      var weeks = state.program.weeks;
-      var weekContent = weeks[state.current.week - 1]
+      var weeks = state.programs[state.current].weeks;
+      var weekContent = weeks[state.programs[state.current].current.week - 1]
       var days = weekContent.days;
-      var dayContent = days[state.current.day - 1]
+      var dayContent = days[state.programs[state.current].current.day - 1]
       var exercises = dayContent.exercises; 
-      var exerciseContent = exercises[state.current.exercise - 1]
+      var exerciseContent = exercises[state.programs[state.current].current.exercise - 1]
       var sets = exerciseContent.sets;
-      var setContent = sets[state.current.day - 1]
+      var setContent = sets[state.programs[state.current].current.day - 1]
 
 
-      if(state.current.set < sets.length) {
-        state.current.set += 1
+      if(state.programs[state.current].current.set < sets.length) {
+        state.programs[state.current].current.set += 1
       }
         else {
-          state.current.set = 1 
-          state.current.exercise +=1 
-          if(state.current.exercise > exercises.length) {
-            state.current.exercise = 1
-            state.current.day += 1
-            if(state.current.day > days.length) {
-              state.current.day = 1; 
-              state.current.week += 1; 
-              if(state.current.week > weeks.length) {
-                state.current.day = 0;
-                state.current.exercise = 0;
-                state.current.week = 0; 
-                state.current.set = 0; 
+          state.programs[state.current].current.set = 1 
+          state.programs[state.current].current.exercise +=1 
+          if(state.programs[state.current].current.exercise > exercises.length) {
+            state.programs[state.current].current.exercise = 1
+            state.programs[state.current].current.day += 1
+            if(state.programs[state.current].current.day > days.length) {
+              state.programs[state.current].current.day = 1; 
+              state.programs[state.current].current.week += 1; 
+              if(state.programs[state.current].current.week > weeks.length) {
+                state.programs[state.current].current.day = 0;
+                state.programs[state.current].current.exercise = 0;
+                state.programs[state.current].current.week = 0; 
+                state.programs[state.current].current.set = 0; 
               }
             }
             

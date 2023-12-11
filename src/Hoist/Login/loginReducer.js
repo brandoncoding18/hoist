@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-    user : null,
-    maxes : null
+    user : "guest",
+    maxes : {}
 };
 
 const loginSlice = createSlice({
@@ -9,8 +9,8 @@ const loginSlice = createSlice({
   initialState,
   reducers: {
     login : (state, action) => {
-        state.user = action.payload.u; 
-        state.maxes = state.user.maxes;
+        state.user = action.payload.user.username; 
+        state.maxes = action.payload.maxes;
 
     },
     logout : (state) => {
@@ -19,11 +19,21 @@ const loginSlice = createSlice({
 
     },
 
+  
+
+    addMax : (state, action) => {
+      alert("Before: " + JSON.stringify(state.maxes))
+      state.maxes[action.payload.name] = {"max" : action.payload.max, "date" : action.payload.date}; 
+      alert("After: " + JSON.stringify(state.maxes))
+
+    } 
+
+
   },
   
 
   
 
 });
-export const { login, logout } = loginSlice.actions;
+export const { login, logout, addMax } = loginSlice.actions;
 export default loginSlice.reducer;

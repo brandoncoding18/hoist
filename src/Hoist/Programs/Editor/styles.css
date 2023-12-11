@@ -1,7 +1,7 @@
 .card {
     margin-left: 50px;
     margin-bottom: 20px;
-    background-color: rgb(255, 157, 203);
+    background-color: grey;
 
     width : max-content;
     display:fixed;
@@ -14,9 +14,6 @@
     
 }
 
-.button {
-    color: white
-}
 
 
 

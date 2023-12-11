@@ -12,16 +12,16 @@ import { getMax } from "./helpers.js";
 function Workout() {
     //let program = useParams(); 
     var {user} = useSelector((state) => state.loginReducer);
-    const {program, current} = useSelector((state) => state.programReducer);
+    const {programs} = useSelector((state) => state.programReducer);
     user = Database.users.find((u) =>u .username === user); 
     
     //const calendar = program.find((c) => c._id === program)
-    //const {current}= useSelector((state => state.programReducer));
+    const {current}= useSelector((state => state.programReducer));
 
-    var week = (program.weeks.find((w) => w.weekno === current.week))
-    var day = (week.days.find((d) => d.dayno ===  current.day))
-    var exercise = (day.exercises.find((e) => e.exno ===  current.exercise))
-    var set = (exercise.sets.find((s) => s.setno ===  current.set))
+    var week = (programs[current].weeks.find((w) => w.weekno === programs[current].current.week))
+    var day = (week.days.find((d) => d.dayno ===  programs[current].current.day))
+    var exercise = (day.exercises.find((e) => e.exno ===  programs[current].current.exercise))
+    var set = (exercise.sets.find((s) => s.setno ===  programs[current].current.set))
 
     
     
@@ -31,15 +31,14 @@ function Workout() {
     return(<div>
         
         <h1>Today's workout: </h1>
-        <h2> Week {current.week}, Day {current.day}</h2>
+        <h2> Week {programs[current].current.week}, Day {programs[current].current.day}</h2>
         <h2>  </h2>
     
         <h3>Preview: </h3>
-        {JSON.stringify(program)}
         {day.exercises.map((ex) => {
 
                 return(<div>
-                    {(ex.name)}
+                    {(ex.name)}as
                     
                     {ex.sets.map((s) => {
                         var intensity = RPE[s.rpe][s.reps]

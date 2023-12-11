@@ -1,29 +1,25 @@
 import { useStore, useSelector } from "react-redux";
 import {useState} from "react"
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Database from "../../Database";
 import Templates from "./Templates";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 import "./styles.css"
 import programReducer, { addToPrograms, setProgram} from "../programReducer";
 
-function Creator() {
-    const {program} = useSelector((state) => state.programReducer); 
-    //alert(JSON.stringify(program))
-    const [pageProgram, setPageProgram]= useState(JSON.parse(JSON.stringify(program)))
+function Editor() {
+    const [program, setProgram]= useState(JSON.parse(JSON.stringify(Templates.sampleprogram)))
     const [search, setSearch] = useState(""); 
     const [criteria, setCriteria] = useState(""); 
-    const navigate = useNavigate(); 
 
     const [muscle, setMuscle] = useState(""); 
     const [type, setType] = useState(""); 
 
-    const [name, setName] = useState(program.name);
+    const [submit, setSubmit] = useState("");
     const {user} = useSelector((state) => state.loginReducer);
     //const {prog} = useSelector((state) => state.programReducer);
-    var currProgram = pageProgram;
+    var currProgram = program
     const dispatch = useDispatch();
     const {programs} = useSelector((state) => state.programReducer)
    
@@ -33,7 +29,7 @@ function Creator() {
         let newWeek = {...Templates.sampleweek, "weekno" : currProgram.weeks.length + 1}
         currProgram.weeks.push(newWeek)
         alert(currProgram.weeks[currProgram.weeks.length-1].weekno)
-        setPageProgram({...pageProgram,});        //currProgram = program;
+        setProgram({...program,});        //currProgram = program;
     }
 
     const deleteWeek = (week) => {
@@ -43,7 +39,7 @@ function Creator() {
         newWeeks.map((w, index) => w.weekno = index + 1)
         currProgram.weeks = newWeeks; 
         
-        setPageProgram({...pageProgram,});        //currProgram = program;
+        setProgram({...program,});        //currProgram = program;
     }
 
     const addDay = (week) => {
@@ -51,7 +47,7 @@ function Creator() {
         
         let newDay = {...Templates.sampleday, "dayno" : w.days.length + 1}
         currProgram.weeks[week-1].days.push(newDay)
-        setPageProgram({...pageProgram,});
+        setProgram({...program,});
         //currProgram = program;
     }
 
@@ -65,7 +61,7 @@ function Creator() {
         if(newDays.length === 0) {
             deleteWeek(week); 
         }
-        setPageProgram({...pageProgram,});
+        setProgram({...program,});
 
         //currProgram = program;
     }
@@ -75,7 +71,7 @@ function Creator() {
 
         let newExercise = {...Templates.sampleexercise, "exno" : d.exercises.length + 1}
         currProgram.weeks[week-1].days[day-1].exercises.push(newExercise)
-        setPageProgram({...pageProgram,});
+        setProgram({...program,});
         //currProgram = program;
     }
 
@@ -92,7 +88,7 @@ function Creator() {
         if(newExercises.length === 0) {
             deleteDay(week, day); 
         }
-        setPageProgram({...pageProgram,});
+        setProgram({...program,});
         
         //currProgram = program;
     }
@@ -105,7 +101,7 @@ function Creator() {
 
         let newSet = {...Templates.sampleset, "setno" : e.sets.length + 1}
         currProgram.weeks[week-1].days[day-1].exercises[exercise-1].sets.push(newSet)
-        setPageProgram({...pageProgram,});
+        setProgram({...program,});
         //currProgram = program;
     }
 
@@ -113,7 +109,7 @@ function Creator() {
        
 
         JSON.stringify(currProgram.weeks[week-1].days[day-1].exercises[exercise-1].name = val)//.exercises[exercise-1].sets[prop]))// = val; 
-        setPageProgram({...pageProgram,});
+        setProgram({...program,});
         //currProgram = program;
     }
 
@@ -129,7 +125,7 @@ function Creator() {
         if(newSets.length === 0) {
             deleteExercise(week, day, exercise); 
         }
-        setPageProgram({...pageProgram,});
+        setProgram({...program,});
         //currProgram = program;
     }
 
@@ -164,7 +160,7 @@ function Creator() {
         
         
         //JSON.stringify(currProgram.weeks[week-1].days[day-1].exercises[exercise-1].sets[set-1][prop] = val)//.exercises[exercise-1].sets[prop]))// = val; 
-        setPageProgram({...pageProgram,});
+        setProgram({...program,});
         //currProgram = program;
     }
 
@@ -194,16 +190,16 @@ function Creator() {
    
 
 
-    const updateProgramName = (name) => {
-        currProgram.name = name;
-        setPageProgram({...pageProgram,});
-        currProgram = pageProgram;
+    const updateProgramName = () => {
+        setProgram({...program,});
+        currProgram = program;
     }
 
    
 
-    return(<div style={{backgroundColor: 'pink'}} >
+    return(<div>
         
+        Editor
         <br/>
 
         <h4>Looking for exercises to add to your program? </h4>
@@ -234,14 +230,14 @@ function Creator() {
 
 
        <h5>Name your program: 
-       <input type="text" value={pageProgram.name} onChange={(e)=> updateProgramName(e.target.value)}/>        
+       <input type="text" value={submit} onChange={(e)=> setSubmit(e.target.value)}/>        
        </h5>
         
             
 
         
 
-        {pageProgram.weeks.map((w) => {
+        {program.weeks.map((w) => {
 
             
             return(<div class="week-title">
@@ -381,22 +377,19 @@ function Creator() {
 
     }
     else {
-        dispatch(
-            
-            
-            addToPrograms(pageProgram))
-            navigate("../Programs")
-        
+        let header = { "_id": programs.length + 1, user, "name" : submit, "weeks" : program.weeks, "current" : {"week" : 1, "day" : 1, "exercise": 1, "set":1}};
+        dispatch(addToPrograms(header))
+
     }
 }
 
-}>Create Program</button></h1>
+}>Save Program</button></h1>
 
 
-        
+        <Link to="/Programs"><button>hi</button></Link>
         
         
         </div>)
 
 }
-export default Creator
+export default Editor

@@ -3,28 +3,115 @@ import { useState } from "react";
 import Database from "../Database";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import EditableUserProfile from './EditableUserProfile';
+import UserProfile from './UserProfile';
+import { useParams } from "react-router";
+import loginReducer from "../Login/loginReducer";
+import registerReducer from "../Signup/registerReducer";
 
 function Profile() {
-    const {user} = useSelector((state) => state.loginReducer);
-    let currUser = "None" 
-    if(user){
-        currUser = Database.users.find((u) =>u .username === user); 
+   // const visiting = useParams()
+    var {user} = useSelector((state) => state.loginReducer)
+    var {users}= useSelector((state) => state.registerReducer)
+    user = users.find((u) => u.username == user)
+    const {maxes} = useSelector((state) => state.loginReducer)
+    const [editMode, setEditMode] = useState(false);
+    const [name, setName] = useState(user.username);
+    const [firstname, setFirstName] = useState(user.name);
+    const [password, setPassword] = useState(user.password);
+    const [email, setEmail] = useState(user.email);
+    const [age, setAge] = useState(user.age);
 
+
+
+
+    const stored = {name, firstname, password, email, age};
+    
+    
+    var content = {};
+    function handleEditComplete(result) {
+       // console.log("handleEditComplete", result);
+        if (result != null) {
+            setName(result.name);
+            setFirstName(result.firstname);
+            setPassword(result.password);
+            setEmail(result.email);
+            setAge(result.age);
+
+
+        }        
+        setEditMode(false);
     }
-
-    const [maxes, setMaxes] = useState(currUser.maxes);
-    const [currentMax, setCurrentMax] = useState(maxes[0])
+   
 
     /*
-    const [maxSquat, setMaxSquat] = useState(currUser.maxSquat);
-    const [maxBench, setMaxBench] = useState(currUser.maxBench);
-    const [maxDeadlift, setMaxDeadlift] = useState(currUser.maxDeadlift);
-    const [maxOverhead, setMaxOverhead] = useState(currUser.maxOverhead);
-    const [maxRow, setMaxRow] = useState(currUser.maxRow);
-*/
     if(!user) {
-        return (<div>Profile</div>)
+        content = <div>{content}Log in or register to view your profile</div>
     }
+    else {
+        content = <div>{content} </div>
+
+
+        
+    }*/
+     if(maxes) {
+        return(<div>
+            <h1>Profile</h1>
+
+            {
+                    editMode
+                        ? <>
+                            <EditableUserProfile
+                                    stored={stored}
+                                    editCompleteCallback={handleEditComplete}                            
+                            />
+                        </>
+                        : <>
+                            <UserProfile
+                                    stored={stored}
+                                    startEditCallback={() => setEditMode(true)}
+                            />
+                        </>
+                }   
+
+
+            
+            
+             
+            
+        </div>);
+            
+
+
+    }
+    return(<div>Profile
+        {
+                    editMode
+                        ? <>
+                            <h1>My Profile</h1>
+                            <EditableUserProfile
+                                    stored={stored}
+                                    editCompleteCallback={handleEditComplete}                            
+                            />
+                        </>
+                        : <>
+                            <UserProfile
+                                    stored={stored}
+                                    startEditCallback={() => setEditMode(true)}
+                            />
+                        </>
+                }   
+
+        <h4>No maxes found</h4>
+       
+
+    </div>)
+    
+    }    
+        
+        
+        
+
     /*
     return(<div>Profile
     <h1>Track your maxes here, and view your progression on a graph!</h1>
@@ -39,16 +126,5 @@ function Profile() {
     
     </div>)
     */
-
-    return(<div>Profile
-        <h4>Track your maxes here, and view your progression of each of your lifts on a graph!</h4>
-        {}
-        <h6> {maxes[0] || "You have no recorded maxes"} </h6>
-        <button>&larr;</button>
-        <button>&rarr;</button>
-        
-        
-        
-        </div>)
-}
+   
 export default Profile

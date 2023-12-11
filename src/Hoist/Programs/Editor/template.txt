@@ -1,0 +1,132 @@
+import { useStore } from "react-redux";
+import {useState} from "react"
+import Database from "../../Database";
+import { Link } from "react-router-dom";
+import "./styles.css"
+
+function Creator() {
+    const [program, setProgram] = useState(Database.sample); 
+    return(<div>
+        
+        Creator
+        <br/>
+        
+
+        {program.weeks.map((w) => {
+
+            
+            return(<div class="week-title">
+
+                Week {w.weekno}
+                ----------------------------------
+
+
+                <div class = "card">
+                <div class= "card-body">
+                
+                    {
+                        w.days.map((d) => {
+                            return(
+                            <div class="day-card"> 
+                                
+                                <div class="day-label">Day {d.dayno}
+                            
+                        
+                            
+                            
+                                </div>
+                            
+                           
+                                <div class = "list-exercises">
+                                {d.exercises.map((e) => {
+                                    
+                                    return(
+                                    <div class = "card-wrapper">
+                                        
+                                    <div class = "exercise-card">
+                                        
+                                        {e.name}
+                                        <div class = "card-wrapper">
+                                            <div class = "set-card">Set</div>
+                                            <div class = "set-card">Weight</div>
+                                            <div class = "set-card">Reps</div>
+                                            <div class = "set-card">Intensity</div>
+                                        </div>
+                                        
+                                                  
+                                    
+                                        {e.sets.map((s) => {
+                                            return(
+                                            <div>
+                                                
+                                            <div class = "card-wrapper">
+                                                <div class = "set-card" style={{width:'29px'}}>
+                                                {s.setno}
+                                                
+                                                </div>
+                                                <div class = "set-card"style={{width:'59px'}}>
+                                                {s.weight}
+                                                
+                                                </div>
+                                                <div class = "set-card"style={{width:'39px'}}>
+                                                {s.reps}
+                                                
+                                                </div>
+                                                <div class = "set-card"style={{width:'87px'}}>
+                                                {s.intensity}
+                                                
+                                                </div>
+
+
+                                            </div>
+                                            </div>)
+                                        })}
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    )
+                                    
+
+
+                                })}
+                                </div>
+                                
+                                
+                                
+                                
+                            
+                        
+                            
+                           
+                            
+                            </div>)
+                            
+
+
+                        })
+
+
+                    }
+                    </div>
+                
+                
+                
+                
+                
+                </div>
+ </div>)
+                
+
+        }
+        )
+        
+        }
+
+        <Link to="/Programs"><button>hi</button></Link>
+        
+        
+        </div>)
+
+}
+export default Creator

@@ -1,3 +1,6 @@
-[ { "_id": "1", "username": "kae", "maxSquat" : 110, "maxBench" : 75, "maxDeadlift" : 160, "maxOverhead" : 45, "maxRow" : 45},
+[ { "_id": "1", "username": "ks", "password" : "password", "name" : "kae", "email" : "ks@gmail.com", "age" : 21, "maxes" : {}},
 
-{ "_id": "2", "username": "brandon", "maxes" : {}}]
+{ "_id": "2", "username": "bw", "password" : "password", "name" : "brandon", "email" : "bw@gmail.com", "age" : 23, "maxes" : {}},
+
+
+{ "_id": "3", "username": "guest", "password" : "password", "name" : "guest", "email" : "none", "age" : "none", "maxes" : {}}]

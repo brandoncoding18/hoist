@@ -8,13 +8,11 @@ import Details from "./Details/index.js";
 import Home from "./Home/index.js";
 import Login from "./Login/index.js";
 import Profile from "./Profile/index.js";
-import Register from "./Register/index.js";
 import Search from "./Search/index.js";
 import store from "./store/index.js";
 import WorkoutCalendar from "./Programs/WorkoutCalendar/index.js";
 import TodaysWorkout from "./Programs/WorkoutCalendar/todaysworkout.js";
 import Creator from "./Programs/Creator/index.js";
-
 function Hoist() {
 
 
@@ -28,7 +26,6 @@ function Hoist() {
         <Route path="/" element={<Navigate to={"Home"} />} />
         <Route path="/Programs/Calendar/:name" element={<WorkoutCalendar/>}/>
         <Route path="/Programs/Creator" element={<Creator/>}/>
-
         <Route path="/Programs/Calendar/:name/TodaysWorkout" element={<TodaysWorkout/>}/>
 
         {

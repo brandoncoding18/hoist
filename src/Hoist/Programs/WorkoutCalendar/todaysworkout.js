@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import "./helpers.js"
 import { getMax, setMax } from "./helpers.js";
+import { addMax } from "../../Login/loginReducer.js";
 function TodaysWorkout() {
     /*
    
@@ -20,12 +21,15 @@ function TodaysWorkout() {
     //let program = useParams(); 
 
     //program = program.name
+    const {programs, current} = useSelector((state) => state.programReducer)
+    const [currentWorkout, setCurrentWorkout] = useState(programs[current].current.day)
 
-    //const calendar = Database.calendars.find((c) => c._id === program)
-    const {program, current} = useSelector((state) => state.programReducer)
     var {user} = useSelector((state) => state.loginReducer);
     user = Database.users.find((u) => u.username === user); 
-    let p = useSelector((state => state.programReducer));
+    const {maxes} = useSelector((state) => state.loginReducer);
+
+    var calendar = Database.calendars.find((c) => c._id === programs[current]._id)
+
 
     var day = 1
     var count = 1; 
@@ -33,8 +37,7 @@ function TodaysWorkout() {
     const [ERPE, setERPE] = useState(6)
     const dispatch = useDispatch();
     //dispatch(setProgram(program))
-    const [finished, setFinished] = useState(false)
-    const [lastButton, setLastButton] = useState(false);
+    
 
 
 
@@ -47,113 +50,144 @@ function TodaysWorkout() {
       }
       
 
-    
-    var week = (program.weeks.find((w) => w.weekno === p.current.week))
-    var day = (week.days.find((d) => d.dayno === p.current.day))
-    var exercise = (day.exercises.find((e) => e.exno === p.current.exercise))
-    var set = (exercise.sets.find((s) => s.setno === p.current.set))
+    var set = {}
+    var exercise = {}
+    var day = {}
+    var week = (programs[current].weeks.find((w) => w.weekno === programs[current].current.week))
+    if(!week) {
+
+        
+
+    }
+    else {
+        try {
+            day = (week.days.find((d) => d.dayno === programs[current].current.day))
+            exercise = (day.exercises.find((e) => e.exno === programs[current].current.exercise))
+            set = (exercise.sets.find((s) => s.setno === programs[current].current.set))
+
+        }
+        catch(e) {
+            day = null
+            exercise = null
+            set = null
+        }
+        
+
+    }
+   
     
 
     
     var weight = set.weight; 
     
-    if(user.maxes['exercise.name']) {
-        weight =  Math.floor( ( user.maxes[exercise.name]// getMax(exercise.name, user)
+    /*
+    if(maxes[exercise.name]) {
+        weight =  Math.floor( ( maxes[exercise.name]// getMax(exercise.name, user)
         * RPE[set.rpe][set.reps])/5) * 5 
+        alert(weight)
     }
+    */
        
     const [currentWeight, setCurrentWeight] = useState(weight);
     
 
 
     
-    if(day > current.day.weekno ) {
+    if(!week) {
 
-        if(p.current.day + 1 > week.days.length) {
-            dispatch(incrementDay());
-        }
-        else {
-
-        }      
-
-        return(<div>Workout finished!
-            Start another workout? 
-            <Link to="../">"<button>Yes</button></Link>
-            <Link to="/Home">"<button>No</button></Link>
+       
+        return(<div>Program finished!
+            Start another one? 
+            <Link to="/Programs"><button>Yes</button></Link>
+            <Link to="/Home"><button>No</button></Link>
 
         </div>)
 
 
     }
-    else {
-        return(<div>
-            Calendar    | ID: {program.name} | NAME: {program.name}| WeekNumber: {p.current.week} | DayNumber : {p.current.day} | ExerciseNumber : {p.current.exercise} | SetNumber : {p.current.set}
-            <h2>{user.username}</h2> 
-    
-          
+    else
+    try {
+         if(day.dayno > currentWorkout) {
+                return(<div>Done</div>)
+            }
+            else {
+                return(<div>
+                    Calendar    | ID: {programs[current].name} | |CURRENT {currentWorkout} NAME: {programs[current].name}| WeekNumber: {programs[current].current.week} | DayNumber : {programs[current].current.day} | ExerciseNumber : {programs[current].current.exercise} | SetNumber : {programs[current].current.set}
+                    <h2>{user.username}</h2> 
             
-    
-    
+                  
+                    
             
-    
-            <h1>Week {week.weekno}</h1>
-            <div> 
-                <h2>Day {day.dayno}</h2>
-                <h3>Exercise: {exercise.name}</h3>
-                <h4>Set: {set.setno}</h4>
-                <h5>Weight: {weight }</h5>
-                <h5>RPE: {set.rpe}</h5>
-                <h5>Reps: {set.reps}</h5>
-    
+            
+                    
+            
+                    <h1>Week {week.weekno}</h1>
+                    <div> 
+                        <h2>Day {day.dayno}</h2>
+                        <h3>Exercise: {exercise.name}</h3>
+                        <h4>Set: {set.setno}</h4>
+                        <h5>Weight: {weight }</h5>
+                        <h5>RPE: {set.rpe}</h5>
+                        <h5>Reps: {set.reps}</h5>
+            
+                        
+            
+            
+                        <form onSubmit={handleSubmit}>
+                                            <label>Estimated RPE:</label>
+                                            <input type="number" id="ERPE" name="ERPE" value={ERPE} min="6" max="10" onChange={(e) =>  setERPE(e.target.value)}></input>
+                                            <input type="submit" onClick={(e) =>{ 
+                                               
+                                                
+                                                    var newMax = Math.ceil((weight / RPE[ERPE][set.reps])/5) * 5 
+                                                    alert(newMax)
+                                                   // setMax(exercise.name, newMax, user)
+                                                    dispatch(addMax({"name" : exercise.name, "max" : newMax, "date" : "" + programs[current].current.week + " " + programs[current].current.day}))
+                                                   // p.current.set < exercise.sets.length  ? incrementDay() : setFinished(true)
+                                                    dispatch(incrementDay())
+                                                    
+                                                
+            
+            
+            
+                                                
                 
-    
-    
-                <form onSubmit={handleSubmit}>
-                                    <label>Estimated RPE:</label>
-                                    <input type="number" id="ERPE" name="ERPE" min="6" max="10" onChange={(e) =>  setERPE(e.target.value)}></input>
-                                    <input type="submit" onClick={(e) =>{ 
-                                       
-                                            var newMax = Math.ceil((weight / RPE[ERPE][set.reps])/5) * 5 
-                                            setMax(exercise.name, newMax, user)
-                                           // p.current.set < exercise.sets.length  ? incrementDay() : setFinished(true)
-                                            dispatch(incrementDay())
+                                                 
+            
+                                                
                                             
-                                        
-    
-    
-    
-                                        
+                                            
+                                            }}/>
+                                            </form>
+            
+                              
+            
+                            
+                       
+                            
+                            
+                       
+                <button onClick={() => 
+                    Database.calendars.find((c) => c._id === programs[current]._id).current = programs[current].current
+                     
+                }>Save</button>
         
-                                         
-    
-                                        
-                                    
-                                    
-                                    }}/>
-                                    </form>
-    
-                      
-    
-                    
-               
-                    
-                    
-               
-        <button onClick={() => 
-            Database.calendars.find((c) => c._id === program._id).current = program.current
-             
-        }>Save</button>
-
-            </div>
-    
-    
-    
-    
+                    </div>
             
             
-            </div>)
-
-    }
+            
+            
+                    
+                    
+                    </div>)
+        
+            }
+        }
+        catch(e) {
+            return(<div>An error has occured while trying to find program date: Week: {programs[current].current.week}Day: {programs[current].current.day}Exercise: {programs[current].current.exercise}Set: {programs[current].current.set}, please edit your program to add these additional days. In the future, please refrain from editing a program while doing your workout for the day, as it will corrupt the data on the site.</div>)
+        }
+    
+   
     
         
 }
