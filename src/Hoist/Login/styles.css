@@ -1,0 +1,69 @@
+.login {
+    color: black; 
+    font-family: Arial, Helvetica, sans-serif;
+  margin : 10px; 
+  
+  color: black; 
+  font-family: Arial, Helvetica, sans-serif;
+  outline: auto;
+  outline-style:groove;
+  margin-left : 50px; 
+  margin-right : 50px; 
+  margin-bottom : 50px; 
+
+
+
+  background-color: pink;
+  padding-top: 1px; 
+  padding-left: 30px;  
+  padding-right: 30px;  
+  padding-bottom: 30px;  
+
+
+
+  box-shadow: 0px 5px 5px black;
+
+    padding : 10px; 
+
+
+
+}
+
+.input {
+    font-family: Arial, Helvetica, sans-serif;
+    border-color : black; 
+    margin : 50px; 
+    width: 40%;
+    display: fixed;
+
+
+}
+
+.input-box {
+    border-color : black; 
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-left: 0%;
+
+  box-sizing: border-box;
+}
+.error {
+    margin : 20px; 
+    color: red;
+    font-size : 20px; 
+}
+
+.button {
+    background-color: plum;
+    color: black; 
+    width: fit-content;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-left: 0%;
+
+
+  box-sizing: border-box;
+}
+    
+

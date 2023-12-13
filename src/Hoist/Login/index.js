@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import registerReducer from "../Signup/registerReducer";
 import {users} from "../Signup/registerReducer.js"
+import "./styles.css"
 function Login() {
     const {user} = useSelector((state) => state.loginReducer);
     const {programs} = useSelector((state) => state.programReducer);
@@ -19,44 +20,53 @@ function Login() {
     const signin = () => {
       try {
           let p = Database.calendars.filter((c) => c.username === credentials.username && c.password === credentials.password)
-          alert(JSON.stringify(users))
+          //alert(JSON.stringify(users))
           let user = users.find((u) => u.username  === credentials.username && u.password === credentials.password)
-          alert(JSON.stringify(user))
+          //alert(JSON.stringify(user))
 
           let maxes = user.maxes;
           dispatch(login({user, maxes}))
-          alert(JSON.stringify(user))
+         // alert(JSON.stringify(user))
 
           {dispatch(setPrograms(p))}
           navigate("/Profile")
 
       }
        catch (err) {
-        setError('Incorrect Login');
+        setError('Incorrect login, please retry with your username and password');
       }
       
     };
 
     
     return(<div>
-      <h1 style={{backgroundColor: 'pink', display: 'fixed'}}> Login</h1>
-      {error && <div>{error}</div>}
-      User
-      <input style={{marginLeft : "75px"}}
+      <div className="login"> Login
+      <div className="error">{error && <div>{error}</div>}</div>
+      
+
+      <div className='input'>
+        User
+      <input className="input-box"
         value={credentials.username}
         onChange={(e) => setCredentials({
           ...credentials,
           username: e.target.value })} />
-          <br/>
+          </div>
+
+     
+        <div className="input">
         Password
-      <input
+      <input className="input-box"
         value={credentials.password}
         onChange={(e) => setCredentials({
           ...credentials,
           password: e.target.value })} />
-      <button onClick={signin}>
+          </div>
+
+      <button className="button" onClick={signin}>
         Login
       </button>
+      </div>
     </div>
   );
   }

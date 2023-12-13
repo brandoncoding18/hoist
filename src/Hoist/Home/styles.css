@@ -1,0 +1,62 @@
+.title {
+    margin-top : 50px; 
+    color: black; 
+    font-family: Arial, Helvetica, sans-serif;
+    outline: auto;
+    outline-style:groove;
+    margin: 20px; 
+    background-color: pink;
+    padding: 20px; 
+    box-shadow: 0px 5px 5px black;
+}
+
+.about {
+    color: black; 
+    font-family: Arial, Helvetica, sans-serif;
+    outline: auto;
+    outline-style:groove;
+    margin-left : 50px; 
+    margin-right : 50px; 
+    margin-bottom : 50px; 
+
+
+
+    background-color: pink;
+    padding-top: 1px; 
+    padding-left: 30px;  
+    padding-right: 30px;  
+    padding-bottom: 30px;  
+
+
+
+    box-shadow: 0px 5px 5px black;
+
+}
+
+.about-card {
+
+    color: black; 
+    font-family: Arial, Helvetica, sans-serif;
+    outline: auto;
+    outline-style:groove;
+    margin-left : 50px; 
+    margin-right : 50px; 
+    margin-bottom : 50px; 
+
+
+
+
+    background-color: rgb(220, 219, 219); 
+    padding-top: 1px; 
+    padding-left: 30px;  
+    padding-right: 30px;  
+    padding-bottom: 30px;  
+
+
+
+    box-shadow: 0px 10px 5px black;
+}
+
+body {
+    background-color: plum; 
+  }

@@ -12,6 +12,7 @@ import "./helpers.js"
 import { getMax, setMax } from "./helpers.js";
 import { addMax } from "../../Login/loginReducer.js";
 function TodaysWorkout() {
+    
     /*
    
     
@@ -42,6 +43,7 @@ function TodaysWorkout() {
 
 
     const handleSubmit = (event) => {
+    
         const temp = ERPE;
         event.preventDefault()
         
@@ -95,7 +97,6 @@ function TodaysWorkout() {
     
     if(!week) {
 
-       
         return(<div>Program finished!
             Start another one? 
             <Link to="/Programs"><button>Yes</button></Link>
@@ -111,9 +112,8 @@ function TodaysWorkout() {
                 return(<div>Done</div>)
             }
             else {
-                return(<div>
-                    Calendar    | ID: {programs[current].name} | |CURRENT {currentWorkout} NAME: {programs[current].name}| WeekNumber: {programs[current].current.week} | DayNumber : {programs[current].current.day} | ExerciseNumber : {programs[current].current.exercise} | SetNumber : {programs[current].current.set}
-                    <h2>{user.username}</h2> 
+                return(<div className="todays-exercise">
+                   
             
                   
                     
@@ -136,11 +136,10 @@ function TodaysWorkout() {
                         <form onSubmit={handleSubmit}>
                                             <label>Estimated RPE:</label>
                                             <input type="number" id="ERPE" name="ERPE" value={ERPE} min="6" max="10" onChange={(e) =>  setERPE(e.target.value)}></input>
-                                            <input type="submit" onClick={(e) =>{ 
+                                            <input type="submit" value="Submit RPE" onClick={(e) =>{ 
                                                
                                                 
                                                     var newMax = Math.ceil((weight / RPE[ERPE][set.reps])/5) * 5 
-                                                    alert(newMax)
                                                    // setMax(exercise.name, newMax, user)
                                                     dispatch(addMax({"name" : exercise.name, "max" : newMax, "date" : "" + programs[current].current.week + " " + programs[current].current.day}))
                                                    // p.current.set < exercise.sets.length  ? incrementDay() : setFinished(true)
@@ -167,10 +166,7 @@ function TodaysWorkout() {
                             
                             
                        
-                <button onClick={() => 
-                    Database.calendars.find((c) => c._id === programs[current]._id).current = programs[current].current
-                     
-                }>Save</button>
+                
         
                     </div>
             

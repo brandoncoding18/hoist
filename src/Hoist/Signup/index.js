@@ -33,24 +33,33 @@ function Signup() {
 
     
     return(<div>
-      <h1 style={{backgroundColor: 'pink', display: 'fixed'}}> Signup</h1>
+      <div className="login"> Signup
       {error && <div>{error}</div>}
-      User
-      <input style={{marginLeft : "75px"}}
+      
+
+      <div className='input'>
+        User
+      <input className="input-box"
         value={credentials.username}
         onChange={(e) => setCredentials({
           ...credentials,
           username: e.target.value })} />
-          <br/>
+          </div>
+
+     
+        <div className="input">
         Password
-      <input
+      <input className="input-box"
         value={credentials.password}
         onChange={(e) => setCredentials({
           ...credentials,
           password: e.target.value })} />
-      <button onClick={register}>
-        Register
+          </div>
+
+      <button className="button" onClick={register}>
+        Sign up
       </button>
+      </div>
     </div>
   );
   }

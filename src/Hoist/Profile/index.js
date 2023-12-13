@@ -8,9 +8,8 @@ import UserProfile from './UserProfile';
 import { useParams } from "react-router";
 import loginReducer from "../Login/loginReducer";
 import registerReducer from "../Signup/registerReducer";
-
+import "./styles.css"
 function Profile() {
-   // const visiting = useParams()
     var {user} = useSelector((state) => state.loginReducer)
     var {users}= useSelector((state) => state.registerReducer)
     user = users.find((u) => u.username == user)
@@ -28,7 +27,6 @@ function Profile() {
     const stored = {name, firstname, password, email, age};
     
     
-    var content = {};
     function handleEditComplete(result) {
        // console.log("handleEditComplete", result);
         if (result != null) {
@@ -44,35 +42,46 @@ function Profile() {
     }
    
 
-    /*
-    if(!user) {
-        content = <div>{content}Log in or register to view your profile</div>
-    }
-    else {
-        content = <div>{content} </div>
 
 
         
-    }*/
-     if(maxes) {
-        return(<div>
-            <h1>Profile</h1>
+    const maxKeys = Object.keys(maxes)
+    const maxVals = Object.values(maxes)
+    var content = <div className="prof">Profile
+    {
+            editMode
+                ? <>
+                    <EditableUserProfile
+                            stored={stored}
+                            editCompleteCallback={handleEditComplete}                            
+                    />
+                </>
+                : <>
+                    <UserProfile
+                            stored={stored}
+                            startEditCallback={() => setEditMode(true)}
+                    />
+                </>
+        }
+        </div>
 
-            {
-                    editMode
-                        ? <>
-                            <EditableUserProfile
-                                    stored={stored}
-                                    editCompleteCallback={handleEditComplete}                            
-                            />
-                        </>
-                        : <>
-                            <UserProfile
-                                    stored={stored}
-                                    startEditCallback={() => setEditMode(true)}
-                            />
-                        </>
-                }   
+    if(user.username === 'guest') {
+        content = (<div>Log in or register to view your profile</div>); 
+        return(content)
+
+    }
+     else if(maxKeys.length > 0) {
+        return(<div className="prof">
+            {content}
+                Maxes: 
+                <div>{
+                    maxVals.map((v, index) => {return(<div>Exercise: {JSON.stringify(maxKeys[index])} Max: {JSON.stringify(v.max)}</div>)})
+                }
+                </div>
+                    
+                    
+
+                 
 
 
             
@@ -84,25 +93,10 @@ function Profile() {
 
 
     }
-    return(<div>Profile
-        {
-                    editMode
-                        ? <>
-                            <h1>My Profile</h1>
-                            <EditableUserProfile
-                                    stored={stored}
-                                    editCompleteCallback={handleEditComplete}                            
-                            />
-                        </>
-                        : <>
-                            <UserProfile
-                                    stored={stored}
-                                    startEditCallback={() => setEditMode(true)}
-                            />
-                        </>
-                }   
+    return(<div className>
+        {content} 
 
-        <h4>No maxes found</h4>
+        <h4 className="prof">No maxes found for this user, start programming to get maxes assigned to you</h4>
        
 
     </div>)

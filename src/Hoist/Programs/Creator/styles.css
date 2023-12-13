@@ -2,8 +2,9 @@
     margin-left: 50px;
     margin-bottom: 20px;
     background-color: rgb(255, 157, 203);
-
-    width : max-content;
+    border-color: black;
+    border-style: double;
+    width : 80%;
     display:fixed;
     
 }
@@ -16,6 +17,12 @@
 
 .button {
     color: white
+    
+}
+
+
+.input-name {
+    width : 25%
 }
 
 
@@ -45,6 +52,9 @@
 
 
 }
+
+
+
 
 .exercise-card {
     width: auto; 

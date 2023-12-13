@@ -5,7 +5,7 @@ import Database from "../../Database";
 import Templates from "./Templates";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 import "./styles.css"
 import programReducer, { addToPrograms, setProgram} from "../programReducer";
 
@@ -32,7 +32,7 @@ function Creator() {
         
         let newWeek = {...Templates.sampleweek, "weekno" : currProgram.weeks.length + 1}
         currProgram.weeks.push(newWeek)
-        alert(currProgram.weeks[currProgram.weeks.length-1].weekno)
+        //alert(currProgram.weeks[currProgram.weeks.length-1].weekno)
         setPageProgram({...pageProgram,});        //currProgram = program;
     }
 
@@ -183,11 +183,36 @@ function Creator() {
    
 
     const handleSearch = () => {
-        alert('You searched for ' + search + "\n" +
-        "API String: " + ""
+        const API_STRING = 'https://api.api-ninjas.com/v1/exercises'
+        const KEY = 'Sx5wmETbBCVN51/kBZwLcQ==ssZVJ06KeQxKXPiJ'
+        
+        if(criteria === "type") {
+            alert(`${API_STRING}?type=${type}`)
+
+            //axios.get(`${API_STRING}?type=${type}`, { headers: { 'X-Api-Key' : KEY}} )
+
+        }
+        else if (criteria === "name") {
+            alert(`${API_STRING}?name=${name}`)
+
+           // axios.get(`${API_STRING}?name=${name}`, { headers: { 'X-Api-Key' : KEY}} )
+
+        }
+        else if (criteria === "muscle") {
+            alert(`${API_STRING}?muscle=${muscle}`)
+           // axios.get(`${API_STRING}?muscle=${muscle}`, { headers: { 'X-Api-Key' : KEY}} )
+
+
+
+        }
+        else {
+            alert(`${API_STRING}`)
+
+            //axios.get(API_STRING, { headers: { 'X-Api-Key' : KEY}} )
+        }
         
         
-        );
+        
         
     }
 
@@ -202,7 +227,7 @@ function Creator() {
 
    
 
-    return(<div style={{backgroundColor: 'pink'}} >
+    return(<div >
         
         <br/>
 
@@ -211,7 +236,7 @@ function Creator() {
         <form onSubmit={handleSearch}>
 
 
-
+            Filter by: 
             <select name="criteria" id="criteria" onChange={(e) => setCriteria(e.target.value)}>
                         <option value="">Any  </option> 
 
@@ -221,12 +246,47 @@ function Creator() {
                         </select>
                         
                 {(criteria === "type") 
-                ? (<div>Type </div>) 
+                ? (<select name="type" id="type"onChange={(e) => setType(e.target.value)}>
+                        <option value="olympic_weightlifting">Olympic Weightlifting</option> 
+                        <option value="powerlifting">Powerlifting</option> 
+                        <option value="strength">Strength</option> 
+                        </select>) 
                 : (criteria === "muscle" 
-                    ? (<div>Muscle</div>) 
-                    : (<div>Name</div>))}
+                    ? <select name="muscle" id="muscle" onChange={(e) => setMuscle(e.target.value)}> 
+
+                    <option value="abdominals">Abdominals</option> 
+                    <option value="abductors">Abductors</option> 
+                    <option value="biceps">Biceps</option> 
+                    <option value="calves">Calves</option> 
+                    <option value="chest">Chest</option> 
+                    <option value="forearms">Forearms</option> 
+                    <option value="glutes">Glutes</option> 
+                    <option value="hamstrings">Hamstrings</option> 
+                    <option value="lats">Lats</option> 
+                    <option value="lower_back">Lower Back</option> 
+                    <option value="middle_back">Middle Back</option> 
+                    <option value="neck">Neck</option> 
+                    <option value="quadriceps">Quadriceps</option> 
+                    <option value="traps">Traps</option> 
+                    <option value="triceps">Triceps</option> 
+
+                    </select> 
+                    : ((criteria === "name"
+                        ?(<input type="text" value={search} placeholder="Partial matches accepted" onChange={(e)=> setSearch(e.target.value)} /> )
+                        :(<></>)
+                    
+                    
+                    
+                    
+                    
+                    
+                    ))
+                    
+                    
+                    
+                    )}
                 
-            <input type="submit" value="Search for exercises" />
+            <input type="submit" value="Search for exercises"/>
         </form>
 
         <h4>In order to set weights automatically via RPE, the names of exercises in your program MUST match those of an existing exercise in your maxes. Otherwise, the weight will default to what you put in the "Weight" column.</h4>
@@ -234,7 +294,7 @@ function Creator() {
 
 
        <h5>Name your program: 
-       <input type="text" value={pageProgram.name} onChange={(e)=> updateProgramName(e.target.value)}/>        
+       <input className="input-name" type="text" value={pageProgram.name} onChange={(e)=> updateProgramName(e.target.value)}/>        
        </h5>
         
             
@@ -375,8 +435,9 @@ function Creator() {
 
 <div><button onClick={() => addWeek()}>Add Week</button></div>
 <h1><button onClick={() => {
-    if(user === null) {
-       alert('Unimplemented move to login')
+    if(user === "guest") {
+        navigate("../Login")
+
        // dispatch(addToPrograms(program, u, submit))
 
     }
@@ -390,7 +451,7 @@ function Creator() {
     }
 }
 
-}>Create Program</button></h1>
+}>Save</button></h1>
 
 
         

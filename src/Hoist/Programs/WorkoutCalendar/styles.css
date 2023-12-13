@@ -1,0 +1,28 @@
+.today {
+    background-color: pink;
+    width: 50%;
+    margin : 50px; 
+    padding : 50px; 
+    box-shadow: 0px 5px 5px black;
+    border-color : black; 
+    border-style: double;
+    padding : 10px; 
+
+}
+
+.list-exercises {
+    margin-left: 20px; 
+    font-style: italic;
+}
+
+.todays-exercise {
+    background-color: pink;
+    width: 50%;
+    margin : 50px; 
+    padding : 50px; 
+    box-shadow: 0px 5px 5px black;
+    border-color : black; 
+    border-style: double;
+    padding : 10px; 
+
+}

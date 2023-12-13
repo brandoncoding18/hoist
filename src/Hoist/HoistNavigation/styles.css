@@ -1,11 +1,19 @@
 .list-group {
     font-size: 25px;
+    padding : 10px; 
+    margin: 2px; 
+    outline-color: black;
+    padding-bottom: 10px; 
+    outline: auto; 
+    outline-color : blue;
+
     display: fixed;
     align-items: left;
     background-color: rgb(255, 157, 203);
     text-decoration: none;
     padding-left: 0px;
     padding-bottom: 19px;
+    
 
     
 }
@@ -14,9 +22,14 @@
 
     background-color: rgb(255, 157, 203);
     color : black; 
+    outline:invert;
+    outline-style: none;
+    outline-color: black;
+
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
+    padding-top: 10px; 
     padding-left: 50px;
     padding-right: 50px; 
     padding-bottom: 20px; 
@@ -26,9 +39,14 @@
 }
 
 .list-group a.active {
+    margin: 1px;
+    outline-width: 3px;
     color : purple;
     font-style: bold;
+    outline-color : black;
+    outline-style: solid;
     background-color: pink;
     text-decoration: none;
+    box-shadow: 0px 5px 8px black;
 
 }

@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom/client'
 import programReducer from "../programReducer";
 import "./helpers.js"
 import { getMax } from "./helpers.js";
+import "./styles.css"
 function Workout() {
     //let program = useParams(); 
     var {user} = useSelector((state) => state.loginReducer);
@@ -28,23 +29,27 @@ function Workout() {
     //const [currentWeight, setCurrentWeight] = useState(weight);
     
     
-    return(<div>
+    return(<div className="today">
         
         <h1>Today's workout: </h1>
         <h2> Week {programs[current].current.week}, Day {programs[current].current.day}</h2>
         <h2>  </h2>
     
         <h3>Preview: </h3>
+        <div className="list-exercises">
         {day.exercises.map((ex) => {
 
                 return(<div>
-                    {(ex.name)}as
+                    {(ex.name)}
                     
                     {ex.sets.map((s) => {
                         var intensity = RPE[s.rpe][s.reps]
                         var weight = Math.floor((getMax(exercise.name, user) * RPE[s.rpe][s.reps])/5) * 5; 
-                        return(<div> Set: {s.setno} Reps: {s.reps}  Intensity: {intensity} RPE: {s.rpe} Weight: {weight}</div>)    
-                     })}
+                        return(<div> Set: {s.setno} Reps: {s.reps}  Intensity: {intensity} RPE: {s.rpe} Weight: {s.weight}</div>)    
+                     }
+                     
+                     )}
+                     
                 
                 
                 
@@ -54,9 +59,10 @@ function Workout() {
                 
                 
                 </div>)})}
+                </div>
 
 
-                <Link to={`./TodaysWorkout`}><button> Begin</button></Link>
+                <Link to={`./TodaysWorkout`}><button className="button"> Begin</button></Link>
                 
             
 

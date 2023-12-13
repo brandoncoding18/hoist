@@ -24,7 +24,7 @@ export default function EditableUserProfile({
         editCompleteCallback({name, firstname, password, email, age});
     }
 
-    return <>
+    return <div className="inner-prof"><>
             <h2>Username:</h2>
             <input
                 type='text'
@@ -62,8 +62,10 @@ export default function EditableUserProfile({
        
        
         
-            <button  onClick={handleSaveClicked}>Save</button>
-            <button  onClick={handleCancelClicked}>Cancel</button>
-       
     </>
+    <div>
+            <button  className="button" onClick={handleSaveClicked}>Save</button>
+            <button className="button" onClick={handleCancelClicked}>Cancel</button>
+            </div>
+    </div>
 }

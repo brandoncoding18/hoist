@@ -22,9 +22,9 @@ const loginSlice = createSlice({
   
 
     addMax : (state, action) => {
-      alert("Before: " + JSON.stringify(state.maxes))
+     // alert("Before: " + JSON.stringify(state.maxes))
       state.maxes[action.payload.name] = {"max" : action.payload.max, "date" : action.payload.date}; 
-      alert("After: " + JSON.stringify(state.maxes))
+     // alert("After: " + JSON.stringify(state.maxes))
 
     } 
 
